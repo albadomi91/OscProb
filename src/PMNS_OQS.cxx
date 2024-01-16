@@ -157,9 +157,7 @@ void PMNS_OQS::SetM()
 
   for(int k = 0; k < 9; ++k){
     for(int j = 0; j < 9; ++j){
-      
-      fM[k][j] = fHGM[j][j] + fD[k][j];
-
+      fM[k][j] = fHGM[k][j] + fD[k][j];
     }
   }
   
@@ -221,15 +219,17 @@ void PMNS_OQS::ChangeBaseToGM()
        << " " << fRho[1][0] << " " << fRho[1][1] << " " << fRho[1][2]
        << " " << fRho[2][0] << " " << fRho[2][1] << " " << fRho[2][2] << endl;
 
-  fR[0] = (fRho[0][0] + fRho[1][1] + fRho[2][2]) / sqrt(6.);
-  fR[1] = (fRho[0][1] + fRho[1][0]) / 2.;
-  fR[2] = (fRho[0][1] - fRho[1][0]) * complexD(0.0,1.0) / 2.;
-  fR[3] = (fRho[0][0] - fRho[1][1]) / 2.;
-  fR[4] = fRho[0][2];
-  fR[5] = 0;
-  fR[6] = fRho[1][2];
-  fR[7] = 0;
-  fR[8] = (fRho[0][0] + fRho[1][1] - 2.*fRho[2][2]) / (2.*sqrt(3.));
+  double k = 1./2.;
+  
+  fR[0] =  k * (real(fRho[0][0]) + real(fRho[1][1]) + real(fRho[2][2])) / sqrt(6.);
+  fR[1] =  k * real(fRho[0][1]);
+  fR[2] = -k * imag(fRho[0][1]);
+  fR[3] =  k * (real(fRho[0][0]) - real(fRho[1][1])) / 2.;
+  fR[4] =  k * real(fRho[0][2]);
+  fR[5] = -k * imag(fRho[0][2]);
+  fR[6] =  k * real(fRho[1][2]);
+  fR[7] = -k * imag(fRho[1][2]);
+  fR[8] =  k * (real(fRho[0][0]) + real(fRho[1][1]) - 2.*real(fRho[2][2])) / (2.*sqrt(3.));
 
   cout << "Rmu " << fR[0] << " " << fR[1] << " " << fR[2] << endl;  
 }
