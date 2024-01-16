@@ -238,15 +238,20 @@ void PMNS_OQS::ChangeBaseToGM()
 // pensa se fare rho o nuova variabile rho(t)
 void PMNS_OQS::ChangeBaseToSU3()
 {
-  fRho[0][0] = sqrt(2./3.) * fRt[0] + fRt[3] + fRt[8] / sqrt(3.);
-  fRho[0][1] = fRt[1] - complexD(0.0,1.0) * fRt[2];
-  fRho[0][2] = fRt[4] - complexD(0.0,1.0) * fRt[5];
-  fRho[1][0] = fRt[1] + complexD(0.0,1.0) * fRt[2];
-  fRho[1][1] = sqrt(2./3.) * fRt[0] - fRt[3] + fRt[8] / sqrt(3.);
-  fRho[1][2] = fRt[6] - complexD(0.0,1.0) * fRt[7];
-  fRho[2][0] = fRt[4] + complexD(0.0,1.0) * fRt[5];
-  fRho[2][1] = fRt[6] + complexD(0.0,1.0) * fRt[7];
-  fRho[2][2] = 1. / sqrt(3.) * (sqrt(2.)*fRt[0] - 2.*fRt[8]);
+
+  double k = 1./2.;
+  
+  fRho[0][0] = k * (sqrt(2./3.) * fRt[0] + fRt[3] + fRt[8] / sqrt(3.));
+  fRho[0][1] = k * (fRt[1] - complexD(0.0,1.0) * fRt[2]);
+  fRho[0][2] = k * (fRt[4] - complexD(0.0,1.0) * fRt[5]);
+
+  fRho[1][0] = k * (fRt[1] + complexD(0.0,1.0) * fRt[2]);
+  fRho[1][1] = k * (sqrt(2./3.) * fRt[0] - fRt[3] + fRt[8] / sqrt(3.));
+  fRho[1][2] = k * (fRt[6] - complexD(0.0,1.0) * fRt[7]);
+
+  fRho[2][0] = k * (fRt[4] + complexD(0.0,1.0) * fRt[5]);
+  fRho[2][1] = k * (fRt[6] + complexD(0.0,1.0) * fRt[7]);
+  fRho[2][2] = k * (1. / sqrt(3.) * (sqrt(2.)*fRt[0] - 2.*fRt[8]));
 
   cout << "BaseToSU3: \n" << fRho[0][0] << " " << fRho[0][1] << " " << fRho[0][2] 
        << "\n" << fRho[1][0] << " " << fRho[1][1] << " " << fRho[1][2]
@@ -313,7 +318,7 @@ void PMNS_OQS::PropagatePath(NuPath p)
     }
   }
 
-  cout << "TESTARE D-1 x M x D: DEVE VENIRE DIAGONALE \n";
+  cout << "TEST D-1 x M x D: MUST BE DIAGONAL \n";
   for(int i = 0; i < 9; ++i){
     for(int j = 0; j < 9; ++j){
       cout << diag[i][j] << " ";
@@ -324,7 +329,6 @@ void PMNS_OQS::PropagatePath(NuPath p)
   
   ChangeBaseToGM();
 
-  
   // Convert path length to eV
   double lengthIneV = kKm2eV * p.length;
 
