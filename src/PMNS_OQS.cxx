@@ -20,8 +20,8 @@ using namespace OscProb;
 PMNS_OQS::PMNS_OQS()
   : PMNS_Fast(), fPhi(), fR(), fRt(),
     fRho(3, vectorC(3, 0)), fD(9, vectorC(9, 0)),
-    fM(9, vectorC(9, 0)), fMd(9, 9), fHGM(3, vectorC(3, 0)),
-    fHeff(3, vectorC(3, 0)),
+    fM(9, vectorC(9, 0)), fMd(9, 9),
+    fHeff(3, vectorC(3, 0)), fHGM(9, vectorC(9, 0)),
     fMEvec(9, 9)
 {
   SetStdPath();
@@ -36,10 +36,8 @@ PMNS_OQS::~PMNS_OQS() {}
 
 void PMNS_OQS::InitializeVectors()
 {
-
   SetPhi(1, 0);
   SetPhi(2, 0);
-
   fEval = vectorC(9, 0);
   fEvec = matrixC(9, vectorC(9, (0, 0)));
 }
@@ -47,6 +45,8 @@ void PMNS_OQS::InitializeVectors()
 // set Heff in vacuum-mass basis
 void PMNS_OQS::SetHeff(NuPath p){
 
+  cout << "setHeff\n";
+  
   double Ve = 0;
   
   // Set the neutrino path                                                            
@@ -78,6 +78,8 @@ void PMNS_OQS::SetHeff(NuPath p){
   complexD iphi1(0.0, fPhi[0]);
   complexD iphi2(0.0, fPhi[1]);
 
+  cout << "setHeff2\n";
+
   fHeff[0][0] = c12*c12 * c13*c13 * Ve;
   fHeff[0][1] = c12 * c13*c13 * exp(iphi1) * s12 * Ve;
   fHeff[0][2] = c12 * c13 * exp(-idelta + iphi2) * s13 * Ve;
@@ -93,6 +95,15 @@ void PMNS_OQS::SetHeff(NuPath p){
   // add mass terms
   fHeff[1][1] += fDm[1] / (2 * kGeV2eV * fEnergy);
   fHeff[2][2] += fDm[2] / (2 * kGeV2eV * fEnergy);
+
+  cout << "Heff:\n";
+  for(int i = 0; i < 3; ++i){
+    for(int j = 0; j < 3; ++j){
+
+      cout << fHeff[i][j] << " ";
+    }
+    cout << endl;
+  }
 
 }
 
@@ -134,12 +145,15 @@ void PMNS_OQS::SetHGM()
   fHGM[6][8] =  sqrt(3.) * k * imag(fHeff[1][2]);
   
   fHGM[7][8] = sqrt(3.) * k * real(fHeff[1][2]);
-  
+
+  cout << "HGM: \n";
   for(int i = 1; i < 9; ++i){
     for(int j = 1; j < 9; ++j){
-
       fHGM[j][i] = -fHGM[i][j];
+
+      cout << fHGM[i][j] << " ";
     }
+    cout << endl;
   }
 		     
 }
@@ -212,6 +226,71 @@ void PMNS_OQS::Diagonalise()
 }
 
 
+// rotate fRho into vacuum mass basis
+void PMNS_OQS::RotateState()
+{
+
+  matrixC UM(3, vectorC(3, 0));
+
+  double s12 = sin(fTheta[0][1]);
+  double s13 = sin(fTheta[0][2]);
+  double s23 = sin(fTheta[1][2]);
+  
+  double c12 = cos(fTheta[0][1]);
+  double c13 = cos(fTheta[0][2]);
+  double c23 = cos(fTheta[1][2]);
+
+  complexD idelta(0.0, fDelta[0][2]);
+  if (fIsNuBar){
+    idelta = conj(idelta);
+  }
+  complexD iphi1(0.0, fPhi[0]);
+  complexD iphi2(0.0, fPhi[1]);
+
+  UM[0][0] =  c12*c13;
+  UM[0][1] =  s12*c13*exp(iphi1);
+  UM[0][2] =  s13*exp(-idelta + iphi2);
+
+  UM[1][0] = -exp(-iphi1) * (s12*c23 + c12*s13*s23*exp(idelta));
+  UM[1][1] =  c12 * c23 - s12 * s13 * s23 * exp(idelta);
+  UM[1][2] =  s23 * c13 * exp(iphi2 - iphi1);
+
+  UM[2][0] =  exp(-iphi2) * (s12*s23 - c12*c23*s13*exp(idelta));
+  UM[2][1] = -exp(iphi1 - iphi2) * (c12*s23 + s12*s13*c23*exp(idelta));
+  UM[2][2] =  c13 * c23;
+
+  matrixC mult(3, vectorC(3, 0));
+  
+   for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      for (int k = 0; k < 3; k++) {
+   
+	mult[i][j] += fRho[i][k] * UM[k][j];
+      }
+    }
+   }
+
+   for (int i = 0; i < 3; i++) {
+    for (int j = i; j < 3; j++) {
+      for (int k = 0; k < 3; k++) {
+	fRho[i][j] += conj(UM[k][i]) * mult[k][j];
+      }
+      if (j > i) fRho[j][i] = conj(fRho[i][j]);
+    }
+   }
+
+   cout << "fRho in mass basis: " << endl;
+
+   for (int i = 0; i < 3; i++) {
+     for (int j = i; j < 3; j++) {
+       cout << fRho[i][j] << " ";
+     }
+     cout << endl;
+   }
+   
+}
+
+
 void PMNS_OQS::ChangeBaseToGM()
 {
   
@@ -235,7 +314,6 @@ void PMNS_OQS::ChangeBaseToGM()
 }
 
 
-// pensa se fare rho o nuova variabile rho(t)
 void PMNS_OQS::ChangeBaseToSU3()
 {
 
@@ -257,9 +335,9 @@ void PMNS_OQS::ChangeBaseToSU3()
        << "\n" << fRho[1][0] << " " << fRho[1][1] << " " << fRho[1][2]
        << "\n" << fRho[2][0] << " " << fRho[2][1] << " " << fRho[2][2] << endl;	
 
-  cout << "ABS: " << abs(fRho[0][0]) << " " << abs(fRho[1][1]) << " " << abs(fRho[2][2]) << endl;
-  
+  cout << "ABS: " << abs(fRho[0][0]) << " " << abs(fRho[1][1]) << " " << abs(fRho[2][2]) << endl;  
 }
+
 
 //.............................................................................
 ///
@@ -269,6 +347,9 @@ void PMNS_OQS::ChangeBaseToSU3()
 ///
 void PMNS_OQS::PropagatePath(NuPath p)
 {
+
+  cout << "start of propagatepath\n";
+  
   SetHeff(p);
 
   SetHGM();
@@ -326,6 +407,7 @@ void PMNS_OQS::PropagatePath(NuPath p)
     cout << endl;
   }
 
+  RotateState();
   
   ChangeBaseToGM();
 
@@ -349,7 +431,7 @@ void PMNS_OQS::PropagatePath(NuPath p)
   
   ChangeBaseToSU3();
   
-  cout << "\n fine di propagatepath() \n";
+  cout << "\n end of propagatepath() \n";
 }
 
 

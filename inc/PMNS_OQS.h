@@ -23,13 +23,13 @@ namespace OscProb {
     virtual void SetHeff(NuPath p);
     virtual void SetHGM();
     virtual void SetM();
+    virtual void Diagonalise();
     virtual void ChangeBaseToGM();
     virtual void ChangeBaseToSU3();
-
+    virtual void RotateState();
+    
     /// Specialized solver for NxN matrices
     template <typename T> void SolveEigenSystem();
-
-    virtual void Diagonalise();
     
     // Resetting and propagating
     virtual void ResetToFlavour(int flv); ///< Reset neutrino state to pure flavour flv
@@ -43,10 +43,7 @@ namespace OscProb {
 
     matrixC fRho; ///< The neutrino density matrix state
     matrixC fHeff;
-    matrixC fHGM;
-    
-    std::vector<matrixC> fGM; ///< 3x3 Gell-Mann matrices: they are 9
-    
+    matrixC fHGM; ///< Heff in Gell-Mann basis
     matrixC fD;  ///< Off-diagonal, 9x9 dissipator
     matrixC fM;  ///< M
 
@@ -56,7 +53,6 @@ namespace OscProb {
 
     vectorC fEval; ///< Eigenvalues of the Hamiltonian
     matrixC fEvec; ///< Eigenvectors of the Hamiltonian
-    
   };
 
 } // namespace OscProb
