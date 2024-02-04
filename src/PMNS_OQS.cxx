@@ -99,7 +99,6 @@ void PMNS_OQS::SetHeff(NuPath p){
   cout << "Heff:\n";
   for(int i = 0; i < 3; ++i){
     for(int j = 0; j < 3; ++j){
-
       cout << fHeff[i][j] << " ";
     }
     cout << endl;
@@ -112,9 +111,12 @@ void PMNS_OQS::SetHeff(NuPath p){
 void PMNS_OQS::SetHGM()
 {
 
-  double k = 1./2.;
+  //double k = 1./2.;
+  double k = 1.;
+
+  cout << "test Heff in setHGM " << fHeff[0][1] << " real " << real(fHeff[0][1]) << " imag " << imag(fHeff[0][1]) << endl;  
   
-  fHGM[1][2] =  k * (real(fHeff[0][0]) - real(fHeff[1][1]));
+  fHGM[1][2] =  k * (fHeff[0][0] - fHeff[1][1]);
   fHGM[1][3] =  2. * k * imag(fHeff[0][1]);
   fHGM[1][4] = -k * imag(fHeff[1][2]);
   fHGM[1][5] = -k * real(fHeff[1][2]);
@@ -132,7 +134,7 @@ void PMNS_OQS::SetHGM()
   fHGM[3][6] =  k * imag(fHeff[1][2]);
   fHGM[3][7] =  k * real(fHeff[1][2]);
 
-  fHGM[4][5] =  k * (real(fHeff[0][0]) - real(fHeff[2][2]));
+  fHGM[4][5] =  k * (fHeff[0][0] - fHeff[2][2]);
   fHGM[4][6] = -k * imag(fHeff[0][1]);
   fHGM[4][7] =  k * real(fHeff[0][1]);
   fHGM[4][8] =  sqrt(3.) * k * imag(fHeff[0][2]);
@@ -141,7 +143,7 @@ void PMNS_OQS::SetHGM()
   fHGM[5][7] = -k * imag(fHeff[0][1]);
   fHGM[5][8] =  sqrt(3.) * k * real(fHeff[0][2]);
   
-  fHGM[6][7] =  k * (real(fHeff[1][1]) - real(fHeff[2][2]));
+  fHGM[6][7] =  k * (fHeff[1][1] - fHeff[2][2]);
   fHGM[6][8] =  sqrt(3.) * k * imag(fHeff[1][2]);
   
   fHGM[7][8] = sqrt(3.) * k * real(fHeff[1][2]);
@@ -149,8 +151,9 @@ void PMNS_OQS::SetHGM()
   cout << "HGM: \n";
   for(int i = 1; i < 9; ++i){
     for(int j = 1; j < 9; ++j){
-      fHGM[j][i] = -fHGM[i][j];
 
+      if(fHGM[j][i] == complexD(0, 0)) fHGM[j][i] = -fHGM[i][j];
+      
       cout << fHGM[i][j] << " ";
     }
     cout << endl;
@@ -173,7 +176,7 @@ void PMNS_OQS::SetM()
     for(int j = 0; j < 9; ++j){
       fM[k][j] = fHGM[k][j] + fD[k][j];
     }
-  }
+  }  
   
 }
 
@@ -226,8 +229,8 @@ void PMNS_OQS::Diagonalise()
 }
 
 
-// rotate fRho into vacuum mass basis
-void PMNS_OQS::RotateState()
+// rotate fRho into vacuum mass basis or flavour basis
+void PMNS_OQS::RotateState(bool to_mass)
 {
 
   matrixC UM(3, vectorC(3, 0));
@@ -261,19 +264,26 @@ void PMNS_OQS::RotateState()
 
   matrixC mult(3, vectorC(3, 0));
   
-   for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
+      mult[i][j] = 0;
       for (int k = 0; k < 3; k++) {
-   
-	mult[i][j] += fRho[i][k] * UM[k][j];
+	if (to_mass)
+	  mult[i][j] += fRho[i][k] * UM[k][j];
+	else
+	  mult[i][j] += fRho[i][k] * conj(UM[j][k]);
       }
     }
    }
-
+  
    for (int i = 0; i < 3; i++) {
     for (int j = i; j < 3; j++) {
+      fRho[i][j] = 0;
       for (int k = 0; k < 3; k++) {
-	fRho[i][j] += conj(UM[k][i]) * mult[k][j];
+	if (to_mass)
+	  fRho[i][j] += conj(UM[k][i]) * mult[k][j];
+	else
+          fRho[i][j] += UM[i][k] * mult[k][j];
       }
       if (j > i) fRho[j][i] = conj(fRho[i][j]);
     }
@@ -298,17 +308,17 @@ void PMNS_OQS::ChangeBaseToGM()
        << " " << fRho[1][0] << " " << fRho[1][1] << " " << fRho[1][2]
        << " " << fRho[2][0] << " " << fRho[2][1] << " " << fRho[2][2] << endl;
 
-  double k = 1./2.;
+  double k = 2.;
   
-  fR[0] =  k * (real(fRho[0][0]) + real(fRho[1][1]) + real(fRho[2][2])) / sqrt(6.);
+  fR[0] =  k * (fRho[0][0] + fRho[1][1] + fRho[2][2]) / sqrt(6.);
   fR[1] =  k * real(fRho[0][1]);
   fR[2] = -k * imag(fRho[0][1]);
-  fR[3] =  k * (real(fRho[0][0]) - real(fRho[1][1])) / 2.;
+  fR[3] =  k * (fRho[0][0] - fRho[1][1]) / 2.;
   fR[4] =  k * real(fRho[0][2]);
   fR[5] = -k * imag(fRho[0][2]);
   fR[6] =  k * real(fRho[1][2]);
   fR[7] = -k * imag(fRho[1][2]);
-  fR[8] =  k * (real(fRho[0][0]) + real(fRho[1][1]) - 2.*real(fRho[2][2])) / (2.*sqrt(3.));
+  fR[8] =  k * (fRho[0][0] + fRho[1][1] - 2.*fRho[2][2]) / (2.*sqrt(3.));
 
   cout << "Rmu " << fR[0] << " " << fR[1] << " " << fR[2] << endl;  
 }
@@ -319,12 +329,12 @@ void PMNS_OQS::ChangeBaseToSU3()
 
   double k = 1./2.;
   
-  fRho[0][0] = k * (sqrt(2./3.) * fRt[0] + fRt[3] + fRt[8] / sqrt(3.));
+  fRho[0][0] = k * (sqrt(2./3.)*fRt[0] + fRt[3] + fRt[8]/sqrt(3.));
   fRho[0][1] = k * (fRt[1] - complexD(0.0,1.0) * fRt[2]);
   fRho[0][2] = k * (fRt[4] - complexD(0.0,1.0) * fRt[5]);
 
   fRho[1][0] = k * (fRt[1] + complexD(0.0,1.0) * fRt[2]);
-  fRho[1][1] = k * (sqrt(2./3.) * fRt[0] - fRt[3] + fRt[8] / sqrt(3.));
+  fRho[1][1] = k * (sqrt(2./3.)*fRt[0] - fRt[3] + fRt[8]/sqrt(3.));
   fRho[1][2] = k * (fRt[6] - complexD(0.0,1.0) * fRt[7]);
 
   fRho[2][0] = k * (fRt[4] + complexD(0.0,1.0) * fRt[5]);
@@ -349,11 +359,14 @@ void PMNS_OQS::PropagatePath(NuPath p)
 {
 
   cout << "start of propagatepath\n";
-  
+
+  // define Heff in vacuum mass basis
   SetHeff(p);
 
+  // define Heff in Gell-Mann basis
   SetHGM();
-  
+
+  // Define M matrix as Heff_GM + Dissipator
   SetM();
 
   // Solve for eigensystem
@@ -386,7 +399,7 @@ void PMNS_OQS::PropagatePath(NuPath p)
   for(int i = 0; i < 9; ++i){
     for(int j = 0; j < 9; ++j){
       for(int k = 0; k < 9; ++k){
-	mult[i][j] += fMd(i, k) * fMEvec(k, j);
+	mult[i][j] += fM[i][k] * fMEvec(k, j);
       }
     }
   }
@@ -399,15 +412,21 @@ void PMNS_OQS::PropagatePath(NuPath p)
     }
   }
 
-  cout << "TEST D-1 x M x D: MUST BE DIAGONAL \n";
+
   for(int i = 0; i < 9; ++i){
     for(int j = 0; j < 9; ++j){
-      cout << diag[i][j] << " ";
+      diag[i][j] *= 1e10;
     }
-    cout << endl;
   }
+  
+  cout << "TEST D-1 x M x D: MUST BE DIAGONAL \n";
+  for(int i = 0; i < 9; ++i){
+    cout << diag[i][i] << " ";
+  }
+  cout << endl;
 
-  RotateState();
+  // rotate density matrix to vacuum mass basis
+  RotateState(true);
   
   ChangeBaseToGM();
 
@@ -428,8 +447,10 @@ void PMNS_OQS::PropagatePath(NuPath p)
     cout << "fRt[" << i << "] = " << fRt[i] << endl;
 
   }
-  
+
   ChangeBaseToSU3();
+
+  RotateState(false);
   
   cout << "\n end of propagatepath() \n";
 }

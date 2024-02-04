@@ -26,7 +26,7 @@ namespace OscProb {
     virtual void Diagonalise();
     virtual void ChangeBaseToGM();
     virtual void ChangeBaseToSU3();
-    virtual void RotateState();
+    virtual void RotateState(bool to_mass);
     
     /// Specialized solver for NxN matrices
     template <typename T> void SolveEigenSystem();
