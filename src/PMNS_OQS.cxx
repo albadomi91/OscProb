@@ -289,15 +289,14 @@ void PMNS_OQS::RotateState(bool to_mass)
     }
    }
 
-   cout << "fRho in mass basis: " << endl;
+   cout << "fRho in SU3 basis: " << endl;
 
    for (int i = 0; i < 3; i++) {
-     for (int j = i; j < 3; j++) {
+     for (int j = 0; j < 3; j++) {
        cout << fRho[i][j] << " ";
      }
      cout << endl;
    }
-   
 }
 
 
@@ -309,7 +308,7 @@ void PMNS_OQS::ChangeBaseToGM()
        << " " << fRho[2][0] << " " << fRho[2][1] << " " << fRho[2][2] << endl;
 
   double k = 2.;
-  
+
   fR[0] =  k * (fRho[0][0] + fRho[1][1] + fRho[2][2]) / sqrt(6.);
   fR[1] =  k * real(fRho[0][1]);
   fR[2] = -k * imag(fRho[0][1]);
