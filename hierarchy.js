@@ -13,14 +13,17 @@ var hierarchy =
       [ "OscProb::PMNS_Decay", "classOscProb_1_1PMNS__Decay.html", null ],
       [ "OscProb::PMNS_Fast", "classOscProb_1_1PMNS__Fast.html", [
         [ "OscProb::PMNS_DensityMatrix", "classOscProb_1_1PMNS__DensityMatrix.html", [
-          [ "OscProb::PMNS_Deco", "classOscProb_1_1PMNS__Deco.html", null ],
-          [ "OscProb::PMNS_OQS", "classOscProb_1_1PMNS__OQS.html", null ]
+          [ "OscProb::PMNS_Deco", "classOscProb_1_1PMNS__Deco.html", null ]
         ] ],
+        [ "OscProb::PMNS_GQD", "classOscProb_1_1PMNS__GQD.html", null ],
         [ "OscProb::PMNS_Iter", "classOscProb_1_1PMNS__Iter.html", null ],
         [ "OscProb::PMNS_LIV", "classOscProb_1_1PMNS__LIV.html", null ],
+        [ "OscProb::PMNS_LIVS", "classOscProb_1_1PMNS__LIVS.html", null ],
         [ "OscProb::PMNS_NSI", "classOscProb_1_1PMNS__NSI.html", [
           [ "OscProb::PMNS_SNSI", "classOscProb_1_1PMNS__SNSI.html", null ]
-        ] ]
+        ] ],
+        [ "OscProb::PMNS_NUNM", "classOscProb_1_1PMNS__NUNM.html", null ],
+        [ "OscProb::PMNS_OQS", "classOscProb_1_1PMNS__OQS.html", null ]
       ] ],
       [ "OscProb::PMNS_Sterile", "classOscProb_1_1PMNS__Sterile.html", null ]
     ] ],
