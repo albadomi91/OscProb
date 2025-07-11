@@ -3,11 +3,11 @@
 
 #include <Eigen/Core>
 
-#include "PMNS_Fast.h"
+#include "PMNS_DensityMatrix.h"
 
 namespace OscProb {
 
-  class PMNS_OQS : public PMNS_Fast {
+  class PMNS_OQS : public PMNS_DensityMatrix {
     public:
       PMNS_OQS();          ///< Constructor
       virtual ~PMNS_OQS(); ///< Destructor
@@ -29,21 +29,13 @@ namespace OscProb {
 
       virtual void Diagonalise();
 
-      // Resetting and propagating
-      virtual void ResetToFlavour(
-          int flv); ///< Reset neutrino state to pure flavour flv
-      virtual void SetPureState(
-          vectorC nu_in); ///< Set the density matrix from a pure state
-      virtual void PropagatePath(
-          NuPath p); ///< Propagate neutrino through a single path
-      virtual double P(
-          int flv); ///< Return the probability of final state in flavour flv
+      /// Propagate neutrino through a single path
+      virtual void PropagatePath(NuPath p);
 
       double   fPhi[2]; ///< Majorana phases
       complexD fR[9];
       complexD fRt[9];
 
-      matrixC fRho; ///< The neutrino density matrix state
       matrixC fHeff;
       matrixC fHGM;
 
@@ -56,8 +48,7 @@ namespace OscProb {
       Eigen::MatrixXcd fMd8;
       Eigen::MatrixXcd fMEvec;
 
-      vectorC fEval; ///< Eigenvalues of the Hamiltonian
-      matrixC fEvec; ///< Eigenvectors of the Hamiltonian
+      vectorC fEvalC; ///< Complex eigenvalues
   };
 
 } // namespace OscProb

@@ -13,16 +13,15 @@ using namespace OscProb;
 
 //.............................................................................
 ///
-/// Constructor. \sa PMNS_Base::PMNS_Base
+/// Constructor. \sa PMNS_DensityMatrix::PMNS_DensityMatrix
 ///
 /// This class is restricted to 3 neutrino flavours.
 ///
 PMNS_OQS::PMNS_OQS()
-    : PMNS_Fast(), fPhi(), fR(), fRt(), fRho(3, vectorC(3, 0)),
-      fD(9, vectorC(9, 0)), fM(9, vectorC(9, 0)), fMd(9, 9),
-      fHGM(3, vectorC(3, 0)), fHeff(3, vectorC(3, 0)), fMEvec(9, 9)
+    : PMNS_DensityMatrix(), fPhi(), fR(), fRt(), fD(9, vectorC(9, 0)),
+      fM(9, vectorC(9, 0)), fMd(9, 9), fHGM(3, vectorC(3, 0)),
+      fHeff(3, vectorC(3, 0)), fMEvec(9, 9)
 {
-  SetStdPath();
   InitializeVectors();
 }
 
@@ -37,8 +36,8 @@ void PMNS_OQS::InitializeVectors()
   SetPhi(1, 0);
   SetPhi(2, 0);
 
-  fEval = vectorC(9, 0);
-  fEvec = matrixC(9, vectorC(9, (0, 0)));
+  fEvalC = vectorC(9, 0);
+  fEvec  = matrixC(9, vectorC(9, (0, 0)));
 }
 
 // set Heff in vacuum-mass basis
@@ -165,9 +164,9 @@ template <typename T> void PMNS_OQS::SolveEigenSystem()
 
   Eigen::ComplexEigenSolver<T> eigensolver(M);
 
-  // Fill fEval and fEvec vectors from GSL objects
+  // Fill fEvalC and fEvec vectors from GSL objects
   for (int i = 0; i < 9; i++) {
-    fEval[i] = eigensolver.eigenvalues()(i);
+    fEvalC[i] = eigensolver.eigenvalues()(i);
     for (int j = 0; j < 9; j++) {
       fEvec[i][j] = eigensolver.eigenvectors()(i, j);
     }
@@ -257,7 +256,7 @@ void PMNS_OQS::PropagatePath(NuPath p)
 
   cout << "EIGENVALUES: \n";
   //  for(int i = 0; i < 9; ++i){
-  for (int i = 0; i < 9; ++i) { cout << fEval[i] << " "; }
+  for (int i = 0; i < 9; ++i) { cout << fEvalC[i] << " "; }
   cout << endl;
 
   Eigen::MatrixXcd fMEvecInv = fMEvec.inverse();
@@ -297,7 +296,7 @@ void PMNS_OQS::PropagatePath(NuPath p)
     for (int k = 0; k < 9; ++k) {
       for (int j = 0; j < 9; ++j) {
         fRt[i] +=
-            exp(fEval[k] * lengthIneV) * fEvec[i][k] * fMEvecInv(k, j) * fR[j];
+            exp(fEvalC[k] * lengthIneV) * fEvec[i][k] * fMEvecInv(k, j) * fR[j];
       }
     }
 
@@ -307,71 +306,6 @@ void PMNS_OQS::PropagatePath(NuPath p)
   ChangeBaseToSU3();
 
   cout << "\n fine di propagatepath() \n";
-}
-
-//.............................................................................
-///
-/// Reset the neutrino state back to a pure flavour where it starts
-///
-/// Flavours are:
-/// <pre>
-///   0 = nue, 1 = numu, 2 = nutau
-///   3 = sterile_1, 4 = sterile_2, etc.
-/// </pre>
-/// @param flv - The neutrino starting flavour.
-///
-void PMNS_OQS::ResetToFlavour(int flv)
-{
-  PMNS_Base::ResetToFlavour(flv);
-
-  assert(flv >= 0 && flv < fNumNus);
-
-  for (int i = 0; i < fNumNus; ++i) {
-    for (int j = 0; j < fNumNus; ++j) {
-      if (i == flv && i == j)
-        fRho[i][j] = one;
-      else
-        fRho[i][j] = zero;
-    }
-  }
-}
-
-//.............................................................................
-///
-/// Compute oscillation probability of flavour flv from current state
-///
-/// Flavours are:
-/// <pre>
-///   0 = nue, 1 = numu, 2 = nutau
-///   3 = sterile_1, 4 = sterile_2, etc.
-/// </pre>
-/// @param flv - The neutrino final flavour.
-///
-/// @return Neutrino oscillation probability
-///
-double PMNS_OQS::P(int flv)
-{
-  assert(flv >= 0 && flv < fNumNus);
-
-  return sqrt(fRho[flv][flv].real() * fRho[flv][flv].real() +
-              fRho[flv][flv].imag() * fRho[flv][flv].imag());
-}
-
-//.............................................................................
-///
-/// Set the density matrix from a pure state: redefinition from PMNS_Base.
-///
-/// @param nu_in - The neutrino initial state in flavour basis.
-///
-void PMNS_OQS::SetPureState(vectorC nu_in)
-{
-  assert(nu_in.size() == fNumNus);
-
-  for (int i = 0; i < fNumNus; i++) {
-    for (int j = 0; j < fNumNus; j++) {
-      fRho[i][j] = conj(nu_in[i]) * nu_in[j];
-    }
-  }
 }
 
 ////////////////////////////////////////////////////////////////////////
