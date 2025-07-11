@@ -59,18 +59,19 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Absorption_8cxx.html",
-"classOscProb_1_1PMNS__Base.html#a20c2828c869b74f9a28cfa09fd95d68e",
-"classOscProb_1_1PMNS__Decay.html#a382ddd7b76ca89b43f22614a2ea7327b",
-"classOscProb_1_1PMNS__Deco.html#a4a3fcca124362cdedaf53cd4ac40f8e7",
-"classOscProb_1_1PMNS__Fast.html#a4ea861a6707ce1be3a54aad2b60f8632",
-"classOscProb_1_1PMNS__Iter.html#a6afb2a19f590e4c5c745902510a4f919",
-"classOscProb_1_1PMNS__LIV.html#a72cd5d08922bf074dadc3eb9b32da67a",
-"classOscProb_1_1PMNS__NSI.html#a6241325b1bd28cafa556daaecbe4ed62",
-"classOscProb_1_1PMNS__OQS.html#a468e587b88f994b61691dded271b9fe1",
-"classOscProb_1_1PMNS__SNSI.html#a314360bbb52eca3130b90aa319aab70e",
-"classOscProb_1_1PMNS__Sterile.html#a273d49f3c5390e7bce624c97c4da5677",
-"classOscProb_1_1PremModel.html#ae40eaf3d8b666cfd4fe9242decf78121",
-"structOscProb_1_1TrajConstants.html#a2be346fc4bf3514317e1092b7c56cced"
+"classOscProb_1_1PMNS__Base.html#a1bf3ea8fd2507fd2fd82d7410ff8f578",
+"classOscProb_1_1PMNS__Decay.html#a35b983270613072a3df58b574d80dbfd",
+"classOscProb_1_1PMNS__Deco.html#a468e587b88f994b61691dded271b9fe1",
+"classOscProb_1_1PMNS__DensityMatrix.html#a4a3fcca124362cdedaf53cd4ac40f8e7",
+"classOscProb_1_1PMNS__Fast.html#a63733b246e6d2e609ce3de7a65ba5b9f",
+"classOscProb_1_1PMNS__Iter.html#a72cd5d08922bf074dadc3eb9b32da67a",
+"classOscProb_1_1PMNS__LIV.html#a7bfdb5dc1d696a1818054c0d0790bc5f",
+"classOscProb_1_1PMNS__NSI.html#a69355e770b89e99437c2b8a66e48eeb9",
+"classOscProb_1_1PMNS__OQS.html#a4a3fcca124362cdedaf53cd4ac40f8e7",
+"classOscProb_1_1PMNS__SNSI.html#a2f7f2a028dfe7a90fff6b4f757972c2c",
+"classOscProb_1_1PMNS__Sterile.html#a24bb74bed63569dfe88b18fa6a08060e",
+"classOscProb_1_1PremModel.html#ae384b3a9ebacc19a9af429a29153e5ba",
+"structOscProb_1_1TrajConstants.html#a1dae85a396f884f2168a2d9007e0478f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
