@@ -70,7 +70,7 @@ var searchData=
   ['setnominalpars_67',['SetNominalPars',['../Utils_8h.html#a4fddcd0f00e8b82872119537a730137b',1,'Utils.h']]],
   ['setnsi_68',['SetNSI',['../classOscProb_1_1PMNS__NSI.html#ae8829af10bc4051e8c74c8b1bc81c88c',1,'OscProb::PMNS_NSI']]],
   ['setnunm_69',['SetNUNM',['../classOscProb_1_1PMNS__NUNM.html#a0f5600e520163c343b291589cc8e081f',1,'OscProb::PMNS_NUNM']]],
-  ['setparameterisation_70',['SetParameterisation',['../classOscProb_1_1PMNS__OQS.html#a2632dc266b23520e4fcf8d4288db85aa',1,'OscProb::PMNS_OQS']]],
+  ['setparameterisation_70',['SetParameterisation',['../classOscProb_1_1PMNS__OQS.html#a73133ad69e3f0381ead9a04eb3fecc6f',1,'OscProb::PMNS_OQS']]],
   ['setpath_71',['SetPath',['../classOscProb_1_1Absorption.html#a212db59a69ec8612ab29bbbe24093f9d',1,'OscProb::Absorption::SetPath()'],['../structOscProb_1_1NuPath.html#afdaab5e2e2c5f1f2c5a2604db80bedf7',1,'OscProb::NuPath::SetPath()'],['../classOscProb_1_1PMNS__Base.html#ab4b978fb895abd3cfad07440bae1d34b',1,'OscProb::PMNS_Base::SetPath(NuPath p)'],['../classOscProb_1_1PMNS__Base.html#a35b983270613072a3df58b574d80dbfd',1,'OscProb::PMNS_Base::SetPath(double length, double density, double zoa=0.5, int layer=0)'],['../classOscProb_1_1PMNS__Base.html#ab5294b4f9760fbcda359f191ed2c122b',1,'OscProb::PMNS_Base::SetPath(std::vector&lt; NuPath &gt; paths)']]],
   ['setphi_72',['SetPhi',['../classOscProb_1_1PMNS__OQS.html#ac8aadfcce7038db159757250d8465824',1,'OscProb::PMNS_OQS']]],
   ['setpower_73',['SetPower',['../classOscProb_1_1PMNS__Deco.html#afe7b8b9ae438d8b207bf75c2cfbb9fb8',1,'OscProb::PMNS_Deco']]],

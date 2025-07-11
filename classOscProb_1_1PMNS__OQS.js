@@ -78,7 +78,7 @@ var classOscProb_1_1PMNS__OQS =
     [ "SetM", "classOscProb_1_1PMNS__OQS.html#ae5e4cc66717333fc8bd9932895a11272", null ],
     [ "SetMaxCache", "classOscProb_1_1PMNS__OQS.html#ae67862cf58b0802487a14b047b012a78", null ],
     [ "SetMix", "classOscProb_1_1PMNS__OQS.html#ad849b2231d99c5d66fb3ade8efb896e1", null ],
-    [ "SetParameterisation", "classOscProb_1_1PMNS__OQS.html#a2632dc266b23520e4fcf8d4288db85aa", null ],
+    [ "SetParameterisation", "classOscProb_1_1PMNS__OQS.html#a73133ad69e3f0381ead9a04eb3fecc6f", null ],
     [ "SetPath", "classOscProb_1_1PMNS__OQS.html#a35b983270613072a3df58b574d80dbfd", null ],
     [ "SetPath", "classOscProb_1_1PMNS__OQS.html#ab4b978fb895abd3cfad07440bae1d34b", null ],
     [ "SetPath", "classOscProb_1_1PMNS__OQS.html#ab5294b4f9760fbcda359f191ed2c122b", null ],

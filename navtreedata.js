@@ -67,7 +67,7 @@ var NAVTREEINDEX =
 "classOscProb_1_1PMNS__LIV.html#a6e0a74508d9d6db7be02e242b8467563",
 "classOscProb_1_1PMNS__NSI.html#a5736f3cd792a621dfa844c3fa314cd17",
 "classOscProb_1_1PMNS__NUNM.html#a382ddd7b76ca89b43f22614a2ea7327b",
-"classOscProb_1_1PMNS__OQS.html#a2c86c7f83a17bf0e715aae8197bd3bdc",
+"classOscProb_1_1PMNS__OQS.html#a2d0f021378d6c782a88298ae2f734f4c",
 "classOscProb_1_1PMNS__SNSI.html#a1ac51957bbc4cec9fcfd8f816491cc95",
 "classOscProb_1_1PMNS__SNSI.html#afc8c5d0779b2cd8415c6a58416ed197e",
 "classOscProb_1_1PremModel.html#a7e7fd7dc94d2749ddc1af8db11bda962",
