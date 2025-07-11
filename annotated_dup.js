@@ -11,6 +11,7 @@ var annotated_dup =
       [ "PMNS_Base", "classOscProb_1_1PMNS__Base.html", "classOscProb_1_1PMNS__Base" ],
       [ "PMNS_Decay", "classOscProb_1_1PMNS__Decay.html", "classOscProb_1_1PMNS__Decay" ],
       [ "PMNS_Deco", "classOscProb_1_1PMNS__Deco.html", "classOscProb_1_1PMNS__Deco" ],
+      [ "PMNS_DensityMatrix", "classOscProb_1_1PMNS__DensityMatrix.html", "classOscProb_1_1PMNS__DensityMatrix" ],
       [ "PMNS_Fast", "classOscProb_1_1PMNS__Fast.html", "classOscProb_1_1PMNS__Fast" ],
       [ "PMNS_Iter", "classOscProb_1_1PMNS__Iter.html", "classOscProb_1_1PMNS__Iter" ],
       [ "PMNS_LIV", "classOscProb_1_1PMNS__LIV.html", "classOscProb_1_1PMNS__LIV" ],

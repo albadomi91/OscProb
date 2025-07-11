@@ -10,6 +10,7 @@ var dir_bfccd401955b95cf8c75461437045ac0 =
     [ "PMNS_Base.h", "PMNS__Base_8h.html", "PMNS__Base_8h" ],
     [ "PMNS_Decay.h", "PMNS__Decay_8h.html", "PMNS__Decay_8h" ],
     [ "PMNS_Deco.h", "PMNS__Deco_8h.html", "PMNS__Deco_8h" ],
+    [ "PMNS_DensityMatrix.h", "PMNS__DensityMatrix_8h.html", "PMNS__DensityMatrix_8h" ],
     [ "PMNS_Fast.h", "PMNS__Fast_8h.html", "PMNS__Fast_8h" ],
     [ "PMNS_Iter.h", "PMNS__Iter_8h.html", "PMNS__Iter_8h" ],
     [ "PMNS_LIV.h", "PMNS__LIV_8h.html", "PMNS__LIV_8h" ],
