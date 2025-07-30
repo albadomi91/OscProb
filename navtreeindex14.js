@@ -1,17 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"structOscProb_1_1EigenPoint.html#af985afcb8012deb6de4fcba66342e0d2":[1,0,0,4,8],
-"structOscProb_1_1EigenPoint.html#af985afcb8012deb6de4fcba66342e0d2":[0,0,1,4,8],
-"structOscProb_1_1IdxCompare.html":[1,0,0,5],
-"structOscProb_1_1IdxCompare.html":[0,0,1,5],
-"structOscProb_1_1IdxCompare.html#a29df308768ae1c406e4f9de3e92170b0":[1,0,0,5,2],
-"structOscProb_1_1IdxCompare.html#a29df308768ae1c406e4f9de3e92170b0":[0,0,1,5,2],
-"structOscProb_1_1IdxCompare.html#ac4c6fc547109b3e0007d6342eea57dff":[1,0,0,5,1],
-"structOscProb_1_1IdxCompare.html#ac4c6fc547109b3e0007d6342eea57dff":[0,0,1,5,1],
-"structOscProb_1_1IdxCompare.html#acf7d8627e8dfa6bfc821896647f3d7e8":[1,0,0,5,0],
-"structOscProb_1_1IdxCompare.html#acf7d8627e8dfa6bfc821896647f3d7e8":[0,0,1,5,0],
-"structOscProb_1_1NuPath.html":[1,0,0,6],
-"structOscProb_1_1NuPath.html":[0,0,1,6],
 "structOscProb_1_1NuPath.html#a1cc885eb24b3152596ac2f8500f81ae6":[0,0,1,6,0],
 "structOscProb_1_1NuPath.html#a1cc885eb24b3152596ac2f8500f81ae6":[1,0,0,6,0],
 "structOscProb_1_1NuPath.html#a442b160899e554ad1d800989510d5309":[1,0,0,6,3],

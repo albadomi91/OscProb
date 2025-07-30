@@ -7,7 +7,6 @@ var searchData=
   ['detdistfornextlatbin_4',['DetDistForNextLatBin',['../classOscProb_1_1EarthModelBinned.html#ad7d10c0efa1f34b49eebe3562336d377',1,'OscProb::EarthModelBinned']]],
   ['detdistfornextlonbin_5',['DetDistForNextLonBin',['../classOscProb_1_1EarthModelBinned.html#a03fd9f0aa5eeeaba5da75706fd1b4556',1,'OscProb::EarthModelBinned']]],
   ['detradius_6',['DetRadius',['../structOscProb_1_1TrajConstants.html#adfb9bf3ab98ddfd1df08de38ce4f99a6',1,'OscProb::TrajConstants']]],
-  ['diagonalise_7',['Diagonalise',['../classOscProb_1_1PMNS__OQS.html#a66afa51bb502a28b81b15fedd175ff2d',1,'OscProb::PMNS_OQS']]],
-  ['dlat_8',['dLat',['../structOscProb_1_1EarthModelBinned_1_1LatBinInfo.html#aff42542e2eb556de65d7797a1b83844d',1,'OscProb::EarthModelBinned::LatBinInfo']]],
-  ['dlon_9',['dLon',['../structOscProb_1_1EarthModelBinned_1_1LonBinInfo.html#adf544a29eaed8f8559cf8fb1195326e8',1,'OscProb::EarthModelBinned::LonBinInfo']]]
+  ['dlat_7',['dLat',['../structOscProb_1_1EarthModelBinned_1_1LatBinInfo.html#aff42542e2eb556de65d7797a1b83844d',1,'OscProb::EarthModelBinned::LatBinInfo']]],
+  ['dlon_8',['dLon',['../structOscProb_1_1EarthModelBinned_1_1LonBinInfo.html#adf544a29eaed8f8559cf8fb1195326e8',1,'OscProb::EarthModelBinned::LonBinInfo']]]
 ];
