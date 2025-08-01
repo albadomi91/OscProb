@@ -66,7 +66,7 @@ var searchData=
   ['fpath_63',['fPath',['../structOscProb_1_1EigenPoint.html#a1c263b6ceef5bd4de3181182f944efbb',1,'OscProb::EigenPoint::fPath()'],['../classOscProb_1_1PMNS__Base.html#a8f8fb0cd89fb6e8eb0167eb2c752bbd0',1,'OscProb::PMNS_Base::fPath()']]],
   ['fphases_64',['fPhases',['../classOscProb_1_1PMNS__Base.html#aafed7b62c249ec811201cbcbc58e0866',1,'OscProb::PMNS_Base']]],
   ['fphi_65',['fPhi',['../classOscProb_1_1PMNS__OQS.html#ae631f2360e668bf61af1737e2f946e29',1,'OscProb::PMNS_OQS']]],
-  ['fpower_66',['fPower',['../classOscProb_1_1PMNS__Deco.html#a19fdcdf9a8b2bd9677f72ca1fd77dc3e',1,'OscProb::PMNS_Deco']]],
+  ['fpower_66',['fPower',['../classOscProb_1_1PMNS__OQS.html#a0f56544abea01012459700f1d79e1af6',1,'OscProb::PMNS_OQS::fPower()'],['../classOscProb_1_1PMNS__Deco.html#a19fdcdf9a8b2bd9677f72ca1fd77dc3e',1,'OscProb::PMNS_Deco::fPower()']]],
   ['fprec_67',['fPrec',['../classOscProb_1_1PMNS__Iter.html#a5a75316e1ec61004e90aff61b91bce6c',1,'OscProb::PMNS_Iter']]],
   ['fpremlayers_68',['fPremLayers',['../classOscProb_1_1PremModel.html#aa84534556fd6e35ed67bd899883249fb',1,'OscProb::PremModel']]],
   ['fprevenergy_69',['fPrevEnergy',['../classOscProb_1_1PMNS__Iter.html#ae3b20d413f29c4f20022c9b99da633c2',1,'OscProb::PMNS_Iter']]],

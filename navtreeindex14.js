@@ -1,5 +1,9 @@
 var NAVTREEINDEX14 =
 {
+"structOscProb_1_1NuPath.html":[1,0,0,6],
+"structOscProb_1_1NuPath.html":[0,0,1,6],
+"structOscProb_1_1NuPath.html#a1cc885eb24b3152596ac2f8500f81ae6":[0,0,1,6,0],
+"structOscProb_1_1NuPath.html#a1cc885eb24b3152596ac2f8500f81ae6":[1,0,0,6,0],
 "structOscProb_1_1NuPath.html#a442b160899e554ad1d800989510d5309":[1,0,0,6,3],
 "structOscProb_1_1NuPath.html#a442b160899e554ad1d800989510d5309":[0,0,1,6,3],
 "structOscProb_1_1NuPath.html#a54ddd451db69bc54434de3cf18a117ca":[1,0,0,6,2],
