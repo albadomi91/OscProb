@@ -4609,18 +4609,18 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PMNS__OQS_8cxx_source.html#l00243">243</a> of file <a class="el" href="PMNS__OQS_8cxx_source.html">PMNS_OQS.cxx</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  244</span>{</div>
-<div class="line"><span class="lineno">  245</span>  <span class="keywordtype">double</span> val = cos(th);</div>
-<div class="line"><span class="lineno">  246</span>  <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#a3db28e269e8d399bdfde11cba8cc1f69">fBuiltDissipator</a> *= (<a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#ae3eab588c0397ee9fa41ee39dafd8793">fcos</a>[i][j] == val);</div>
-<div class="line"><span class="lineno">  247</span> </div>
-<div class="line"><span class="lineno">  248</span>  <span class="keywordflow">if</span> (i == j){</div>
-<div class="line"><span class="lineno">  249</span>    <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#ae3eab588c0397ee9fa41ee39dafd8793">fcos</a>[i][j] = 1;</div>
-<div class="line"><span class="lineno">  250</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  251</span>    <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#ae3eab588c0397ee9fa41ee39dafd8793">fcos</a>[i][j] = val;</div>
-<div class="line"><span class="lineno">  252</span>    <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#ae3eab588c0397ee9fa41ee39dafd8793">fcos</a>[j][i] = val;</div>
-<div class="line"><span class="lineno">  253</span>  }</div>
+<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">if</span>(0 &gt; i || i &gt;= <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#a5fb1136d7601efd594c4b7b83b3e8744">SU3_DIM</a> || 0 &gt; j || j &gt;= <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#a5fb1136d7601efd594c4b7b83b3e8744">SU3_DIM</a> || i==j){</div>
+<div class="line"><span class="lineno">  246</span>    cerr &lt;&lt; <span class="stringliteral">&quot;WARNING: deco angle &quot;</span> &lt;&lt; i &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot; not valid. Doing nothing.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  248</span>  }</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>  <span class="keywordtype">double</span> val = cos(th);</div>
+<div class="line"><span class="lineno">  251</span>  <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#a3db28e269e8d399bdfde11cba8cc1f69">fBuiltDissipator</a> *= (<a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#ae3eab588c0397ee9fa41ee39dafd8793">fcos</a>[i][j] == val);</div>
+<div class="line"><span class="lineno">  252</span>  <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#ae3eab588c0397ee9fa41ee39dafd8793">fcos</a>[i][j] = val;</div>
+<div class="line"><span class="lineno">  253</span>  <a class="code hl_variable" href="classOscProb_1_1PMNS__OQS.html#ae3eab588c0397ee9fa41ee39dafd8793">fcos</a>[j][i] = val;</div>
 <div class="line"><span class="lineno">  254</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="PMNS__OQS_8h_source.html#l00059">fBuiltDissipator</a>, and <a class="el" href="PMNS__OQS_8h_source.html#l00055">fcos</a>.</p>
+<p class="reference">References <a class="el" href="PMNS__OQS_8h_source.html#l00059">fBuiltDissipator</a>, <a class="el" href="PMNS__OQS_8h_source.html#l00055">fcos</a>, and <a class="el" href="PMNS__OQS_8h_source.html#l00015">SU3_DIM</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Utils_8h_source.html#l00052">GetOQS()</a>.</p>
 
@@ -7518,7 +7518,7 @@ We should cite them accordingly </p>
 
 <p class="definition">Definition at line <a class="el" href="PMNS__OQS_8h_source.html#l00015">15</a> of file <a class="el" href="PMNS__OQS_8h_source.html">PMNS_OQS.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PMNS__OQS_8cxx_source.html#l00336">PropagatePath()</a>, <a class="el" href="PMNS__OQS_8cxx_source.html#l00153">SetDissipator()</a>, and <a class="el" href="PMNS__OQS_8cxx_source.html#l00256">SetM()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PMNS__OQS_8cxx_source.html#l00336">PropagatePath()</a>, <a class="el" href="PMNS__OQS_8cxx_source.html#l00243">SetDecoAngle()</a>, <a class="el" href="PMNS__OQS_8cxx_source.html#l00153">SetDissipator()</a>, and <a class="el" href="PMNS__OQS_8cxx_source.html#l00256">SetM()</a>.</p>
 
 </div>
 </div>
