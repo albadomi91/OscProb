@@ -24,6 +24,7 @@ var classOscProb_1_1PMNS__OQS =
     [ "FillCache", "classOscProb_1_1PMNS__OQS.html#a785c37fcea974628623c8881bb0fbbf9", null ],
     [ "GetAngle", "classOscProb_1_1PMNS__OQS.html#acee137091304c919642293ddf015bbc8", null ],
     [ "GetDelta", "classOscProb_1_1PMNS__OQS.html#adb8dbc91d4286d2e7c8f768c59476241", null ],
+    [ "GetDissipatorElement", "classOscProb_1_1PMNS__OQS.html#a90832d0d0cd7652b492af438a3fc0f31", null ],
     [ "GetDm", "classOscProb_1_1PMNS__OQS.html#ad26815ac5f4805d1259817e4936e5f8f", null ],
     [ "GetDmEff", "classOscProb_1_1PMNS__OQS.html#a4ea861a6707ce1be3a54aad2b60f8632", null ],
     [ "GetEnergy", "classOscProb_1_1PMNS__OQS.html#acc0d46cc4b8f911b40b807225003bbed", null ],
