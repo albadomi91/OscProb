@@ -141,5 +141,6 @@ var classOscProb_1_1PMNS__OQS =
     [ "kKm2eV", "classOscProb_1_1PMNS__OQS.html#a382ddd7b76ca89b43f22614a2ea7327b", null ],
     [ "kNA", "classOscProb_1_1PMNS__OQS.html#a69355e770b89e99437c2b8a66e48eeb9", null ],
     [ "one", "classOscProb_1_1PMNS__OQS.html#a7d1d0bbcab30a1fd8c368c40134c51ff", null ],
+    [ "SU3_DIM", "classOscProb_1_1PMNS__OQS.html#a5fb1136d7601efd594c4b7b83b3e8744", null ],
     [ "zero", "classOscProb_1_1PMNS__OQS.html#a05e595848c2521dc795efa7645728b94", null ]
 ];
