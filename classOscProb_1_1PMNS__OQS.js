@@ -15,7 +15,6 @@ var classOscProb_1_1PMNS__OQS =
     [ "AvgProbVectorLoE", "classOscProb_1_1PMNS__OQS.html#af0c77c891219912723aaa92033679c42", null ],
     [ "AvgProbVectorLoE", "classOscProb_1_1PMNS__OQS.html#a20c2828c869b74f9a28cfa09fd95d68e", null ],
     [ "BuildHms", "classOscProb_1_1PMNS__OQS.html#adbb84adc028cc49f3a91a6fef56807f6", null ],
-    [ "BuildUM", "classOscProb_1_1PMNS__OQS.html#ab0392a6a0e94ba78c20ed26d2d5f41d1", null ],
     [ "ChangeBaseToGM", "classOscProb_1_1PMNS__OQS.html#a0de5f166cc28e45e48bc14a3d0bc4d0e", null ],
     [ "ChangeBaseToSU3", "classOscProb_1_1PMNS__OQS.html#adc73f7b00495e6f23684942590e038de", null ],
     [ "ClearCache", "classOscProb_1_1PMNS__OQS.html#ac47fd33e69aa6490f99e2fd147a92f03", null ],
