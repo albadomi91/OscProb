@@ -99,6 +99,7 @@ var classOscProb_1_1PMNS__OQS =
     [ "SolveHam", "classOscProb_1_1PMNS__OQS.html#a8a0828401591e88c60e0051fbfe02d5e", null ],
     [ "TryCache", "classOscProb_1_1PMNS__OQS.html#abe533da5f64bec1f4724ab7b58606b77", null ],
     [ "UpdateHam", "classOscProb_1_1PMNS__OQS.html#a16248082308f9d2c332ebf1be0aa90c3", null ],
+    [ "a_i", "classOscProb_1_1PMNS__OQS.html#afee2b62bd67eddbfa2f9e9e48e4cbb2a", null ],
     [ "fa", "classOscProb_1_1PMNS__OQS.html#a1ddcc18ab3522302fa8c7613d8fab0c3", null ],
     [ "fAvgProbPrec", "classOscProb_1_1PMNS__OQS.html#a468e587b88f994b61691dded271b9fe1", null ],
     [ "fBuffer", "classOscProb_1_1PMNS__OQS.html#a6afb2a19f590e4c5c745902510a4f919", null ],
