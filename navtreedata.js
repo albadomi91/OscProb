@@ -60,20 +60,29 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Absorption_8cxx.html",
-"classOscProb_1_1PMNS__Base.html#a0b4c41a27de281472453a1912cbc1e64",
-"classOscProb_1_1PMNS__Decay.html#a2d0f021378d6c782a88298ae2f734f4c",
-"classOscProb_1_1PMNS__Deco.html#a35e79054682aa88c55f4350c29336014",
-"classOscProb_1_1PMNS__DensityMatrix.html#a382ddd7b76ca89b43f22614a2ea7327b",
-"classOscProb_1_1PMNS__Fast.html#a4de96ac9b6d1e9b029ab877e57d211ad",
-"classOscProb_1_1PMNS__Iter.html#a69355e770b89e99437c2b8a66e48eeb9",
-"classOscProb_1_1PMNS__LIV.html#a7257809db071d6dd9780671d30a0d1e6",
-"classOscProb_1_1PMNS__NSI.html#a5fbeeb25bd00fbda7c484dbdb6748a58",
-"classOscProb_1_1PMNS__NUNM.html#a420235c777bfa4dd4cd12ce46343d396",
-"classOscProb_1_1PMNS__OQS.html#a2f7c04af7ab88917c85634ce8380a574",
-"classOscProb_1_1PMNS__SNSI.html#a0ebaeaefab36a3ff381c6293faedfdd6",
-"classOscProb_1_1PMNS__SNSI.html#af0c77c891219912723aaa92033679c42",
-"classOscProb_1_1PremModel.html#a5c1e80b6c99f58dcbb4eec872f013fdd",
-"structOscProb_1_1NuPath.html#a1cc885eb24b3152596ac2f8500f81ae6"
+"classOscProb_1_1EarthModelBinned.html#ae384b3a9ebacc19a9af429a29153e5ba",
+"classOscProb_1_1PMNS__Avg.html#abe533da5f64bec1f4724ab7b58606b77",
+"classOscProb_1_1PMNS__Base.html#ac446fbb333d0dca16bd8c79a5ea68205",
+"classOscProb_1_1PMNS__Decay.html#acc0d46cc4b8f911b40b807225003bbed",
+"classOscProb_1_1PMNS__Deco.html#a98c599fdd72d46a7f961b5f85e2d6952",
+"classOscProb_1_1PMNS__DensityMatrix.html#a4a3fcca124362cdedaf53cd4ac40f8e7",
+"classOscProb_1_1PMNS__DensityMatrix.html#af7689e22ce43482da9af8392f3d6e166",
+"classOscProb_1_1PMNS__Fast.html#aba565962a440d14bee7a2a96d2eca2c5",
+"classOscProb_1_1PMNS__Iter.html#a72cd5d08922bf074dadc3eb9b32da67a",
+"classOscProb_1_1PMNS__LIV.html#a272a2e3c763ef36d08b0eacea12ea2ae",
+"classOscProb_1_1PMNS__LIV.html#acba5663b6f7606add1664116afe11e91",
+"classOscProb_1_1PMNS__Maltoni.html#a8f8fb0cd89fb6e8eb0167eb2c752bbd0",
+"classOscProb_1_1PMNS__NSI.html#a469070c4d15c602f913a3440a66784f4",
+"classOscProb_1_1PMNS__NSI.html#adf23b569112f9f9e0e592f01d79a5f3d",
+"classOscProb_1_1PMNS__NUNM.html#aa1a2147858a328c5f9248cdfb8917637",
+"classOscProb_1_1PMNS__OQS.html#a3db28e269e8d399bdfde11cba8cc1f69",
+"classOscProb_1_1PMNS__OQS.html#ad28c12ef897b5555eda509ea55c99107",
+"classOscProb_1_1PMNS__SNSI.html#a81af6383769f5f27e9abc20a9b0acd24",
+"classOscProb_1_1PMNS__SiderealLIV.html#a253b96b3affc4c3ff5db4f26f7091308",
+"classOscProb_1_1PMNS__SiderealLIV.html#ace7875cf6d3bec161a2b7ed2690aec34",
+"classOscProb_1_1PMNS__Sterile.html#a91f81e5f12d3a5dff74686d4cbc1292c",
+"functions.html",
+"structOscProb_1_1TrajConstants.html#aac095b1d3d8eb15ce9c3c100349063a2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

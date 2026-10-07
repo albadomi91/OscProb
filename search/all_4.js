@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['earthbin_0',['EarthBin',['../structOscProb_1_1EarthBin.html#a8cfed4a828764e1922a14633e6d92ae6',1,'OscProb::EarthBin::EarthBin()'],['../structOscProb_1_1EarthBin.html',1,'OscProb::EarthBin']]],
+  ['earthbin_0',['EarthBin',['../structOscProb_1_1EarthBin.html#acf5c25c74b7ad3c9a76eb868f0d7fa2e',1,'OscProb::EarthBin::EarthBin()'],['../structOscProb_1_1EarthBin.html',1,'OscProb::EarthBin']]],
   ['earthbins_1',['EarthBins',['../structOscProb_1_1EarthBins.html',1,'']]],
   ['earthmodelbase_2',['EarthModelBase',['../classOscProb_1_1EarthModelBase.html',1,'OscProb']]],
   ['earthmodelbase_2ecxx_3',['EarthModelBase.cxx',['../EarthModelBase_8cxx.html',1,'']]],
@@ -13,5 +13,8 @@ var searchData=
   ['eigenpoint_2eh_10',['EigenPoint.h',['../EigenPoint_8h.html',1,'']]],
   ['err_5fmessage_11',['err_message',['../structOscProb_1_1EarthModelBinned_1_1LonBinInfo.html#ab207194fcd42f113237943d99b6c1ca6',1,'OscProb::EarthModelBinned::LonBinInfo']]],
   ['error_12',['error',['../structOscProb_1_1EarthModelBinned_1_1LonBinInfo.html#a8acd4e4d736c1ef07795368b4ffb4bbc',1,'OscProb::EarthModelBinned::LonBinInfo']]],
-  ['exceptions_2eh_13',['exceptions.h',['../exceptions_8h.html',1,'']]]
+  ['exceptions_2eh_13',['exceptions.h',['../exceptions_8h.html',1,'']]],
+  ['extrapolationprob_14',['ExtrapolationProb',['../classOscProb_1_1PMNS__Maltoni.html#a4b3ce575e07d1d570b147dbda5d94a1e',1,'OscProb::PMNS_Maltoni']]],
+  ['extrapolationprobcost_15',['ExtrapolationProbCosT',['../classOscProb_1_1PMNS__Maltoni.html#ad24764cef4a80f9ab53c12eaae8e86b7',1,'OscProb::PMNS_Maltoni']]],
+  ['extrapolationprobloe_16',['ExtrapolationProbLoE',['../classOscProb_1_1PMNS__Maltoni.html#af7534a420971b8711008af6cb6363a45',1,'OscProb::PMNS_Maltoni']]]
 ];
